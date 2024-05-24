@@ -1,4 +1,5 @@
 import express from "express"
+import cors from 'cors';
 import mysql from "mysql"
 import dotenv from 'dotenv';
 dotenv.config();              //load environment variables
@@ -13,14 +14,16 @@ const db = mysql.createConnection({
     database: process.env.DB_NAME
 })
 
-//send a response to the browser
+//MW to allow cross-origin requests
+app.use(cors())
 
+//Express MW to parse JSON request bodies
+app.use(express.json())
+
+//send a response to the browser
 app.get("/", (req, res) => {{
     res.json("Hello this is the backend libray 👋")
 }})
-
-//Express MW to parse JSON requst bodies
-app.use(express.json())
 
 //Fetch data from MySQL DB
 app.get("/books", (req, res) => {
