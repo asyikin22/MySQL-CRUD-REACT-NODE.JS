@@ -4,6 +4,9 @@
 **ERRORS-SOLUTIONS**
 ---------
 
+**26/5/2024**: 
+- I am working on running React with Node.js. I am still looking for solutions. I keep getting error when I tried running them on different local hosts
+
 ![image](https://github.com/asyikin22/MySQL-CRUD-REACT-NODE.JS/assets/148519441/e1e8c65a-ff66-4620-bfe6-06ba97fb0151)
 
 ----------
