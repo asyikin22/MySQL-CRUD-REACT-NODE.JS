@@ -6,7 +6,6 @@ import Update from "./pages/Update";
 
 function App() {
 
-
   return (
     <div className="App">
       <BrowserRouter>
