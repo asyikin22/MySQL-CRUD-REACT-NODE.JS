@@ -21,6 +21,15 @@ const Books = () => {
     fetchAllBooks()
   }, [])
 
+  async function handleDelete(id) {
+    try {
+      await axios.delete("http://localhost:3000/books/"+id)
+      window.location.reload ()
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   return (
     <div>
       <h1 className='bg-blue-400 text-white'>My Library</h1>
@@ -30,9 +39,9 @@ const Books = () => {
             <h2>{book.title}</h2>
             <p>{book.description}</p>
             <p>{book.genre}</p>
-            <span>{book.price}</span>
-            <button className="delete-btn">Delete</button>
-            <button className="update-btn">Update</button>
+            <span>{book.author}</span>
+            <button className="delete-btn" onClick={()=> handleDelete(book.id)}>Delete</button>
+            <button className="update-btn"><Link to={`/update/${book.id}`} style={{ textDecoration: 'none'}}>Update</Link></button>
             </div>
         ))}
       </div>
