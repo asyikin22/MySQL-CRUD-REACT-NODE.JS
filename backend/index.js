@@ -41,6 +41,7 @@ app.post("/books", (req, res) => {
         req.body.title,
         req.body.description,
         req.body.genre,
+        req.body.author,
         req.body.cover,
     ]
 
